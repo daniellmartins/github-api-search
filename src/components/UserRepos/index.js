@@ -2,32 +2,23 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { useGitHubQuery } from "../../hooks";
-import { Error, Loading } from "../";
+import { Error, Loading, UserRepoItem } from "../";
 
-const UserRepos = () => {
+const UserRepos = ({ path }) => {
   let { username } = useParams();
 
-  const { loading, error, data } = useGitHubQuery(`/users/${username}/repos`);
+  const { loading, error, data } = useGitHubQuery(`/users/${username}/${path}`);
 
   if (loading) return <Loading />;
 
   if (error || !data) return <Error />;
 
   return (
-    <ul>
+    <div className="user-repos">
       {data.map((item) => (
-        <li key={item.id}>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            title="Go to Repository in GitHub"
-            href={item.html_url}
-          >
-            {item.name}
-          </a>
-        </li>
+        <UserRepoItem key={item.id} data={item} />
       ))}
-    </ul>
+    </div>
   );
 };
 

@@ -1,9 +1,12 @@
 import React from "react";
 
-const Error = () => {
+const Error = ({ text }) => {
   return (
-    <div>
-      <p>Error</p>
+    <div className="container error">
+      <p className="text-center">
+        {text ||
+          "Parece que você perdeu a conexão. Por favor verifique e tente novamente."}
+      </p>
     </div>
   );
 };
