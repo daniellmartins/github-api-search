@@ -3,7 +3,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <div className="container">
-      <h1>HomePage</h1>
+      <h2 className="text-center">Please enter a GitHub username</h2>
     </div>
   );
 };

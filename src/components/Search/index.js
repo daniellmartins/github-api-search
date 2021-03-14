@@ -28,7 +28,12 @@ const Search = () => {
     <section className="search">
       <div className="container flex justify-center">
         <form className="search__form" onSubmit={_handleSubmit}>
-          <input value={value} type="search" onChange={_handleChange} />
+          <input
+            value={value}
+            placeholder="Enter a GitHub username"
+            type="search"
+            onChange={_handleChange}
+          />
 
           <span className="search__form-buttom flex justify-center items-center">
             <button type="submit">
