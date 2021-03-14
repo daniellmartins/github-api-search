@@ -7,6 +7,7 @@ const Footer = () => {
         Created by{" "}
         <a
           target="_blank"
+          rel="noreferrer"
           title="Go to Profile in GitHub"
           href="https://github.com/daniellmartins"
         >
